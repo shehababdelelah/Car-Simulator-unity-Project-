@@ -304,6 +304,116 @@ Only change `ProjectSettings/` when the whole team agrees, because those changes
 6. Tell the team what changed.
 7. Final integration should happen in the reference/final scene after review.
 
+## How to Push Your Own Branch
+
+Each team member should push work to their own branch. Do not push directly to `main` unless the team lead asks you to.
+
+### 1. Check Current Branch
+
+Before starting work, check which branch you are on:
+
+```powershell
+git branch
+```
+
+If you are on `main`, create your own branch first.
+
+### 2. Create Your Own Branch
+
+Use your name in the branch name:
+
+```powershell
+git checkout -b member-your-name
+```
+
+Examples:
+
+```powershell
+git checkout -b member-abel
+git checkout -b member-amr
+git checkout -b member-shehab
+```
+
+### 3. Save Your Unity Work
+
+In Unity:
+
+1. Save your assigned scene.
+2. Save the project.
+3. Close Play Mode before committing.
+
+### 4. Check Changed Files
+
+```powershell
+git status
+```
+
+Review the changed files. Make sure you are not changing another member's scene by mistake.
+
+### 5. Add Your Changes
+
+To add all changed files:
+
+```powershell
+git add .
+```
+
+Or add only your scene file:
+
+```powershell
+git add Assets/Scenes/Scenarios/YourSceneName.unity
+```
+
+Example:
+
+```powershell
+git add Assets/Scenes/Scenarios/Abel.unity
+```
+
+### 6. Commit Your Changes
+
+Write a short message explaining your work:
+
+```powershell
+git commit -m "Update Abel scenario scene"
+```
+
+### 7. Push Your Branch
+
+The first time you push your branch:
+
+```powershell
+git push -u origin member-your-name
+```
+
+Example:
+
+```powershell
+git push -u origin member-abel
+```
+
+After the first push, you can push again with:
+
+```powershell
+git push
+```
+
+### 8. If You Accidentally Commit on Main
+
+If Git says you are leaving a commit behind when switching branches, keep it by creating a branch from that commit:
+
+```powershell
+git branch backup-your-name commit-id
+```
+
+Example:
+
+```powershell
+git branch backup-shehab f7287d5
+```
+
+Then ask the team lead before moving that commit into `main`.
+
 ## What Each Member Should Submit
 
 Each member should provide:
